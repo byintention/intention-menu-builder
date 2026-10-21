@@ -1,0 +1,46 @@
+---
+description: Intention Menu Builder conventions — menus, Twig, Admin Next UI
+alwaysApply: true
+---
+
+# Intention Menu Builder conventions
+
+## Purpose
+
+Named navigation menus for Grav 2 Admin Next: multiple menus with unique IDs, internal or external items, custom labels and classes, drag reorder, one nest level, and Twig render helpers.
+
+## Layout
+
+| Path | Purpose |
+|------|---------|
+| `intention-menu-builder.php` | Events: Twig paths/extension, API routes, sidebar, plugin page, permissions |
+| `classes/MenuRepository.php` | YAML CRUD under `user/data/intention-menu-builder/{id}.yaml` (runtime data — do not commit site data from this repo) |
+| `classes/MenuResolver.php` | Resolve internal pages and external URLs; mark active / missing |
+| `classes/TwigExtension.php` | `menu_items(id)` and `menu_render(id, options)` |
+| `classes/Api/IntentionMenuBuilderApiController.php` | REST CRUD, `/config`, `/pages` |
+| `admin-next/pages/intention-menu-builder.js` | List + edit Admin Next page |
+| `assets/css/intention-menu-builder-admin.css` | Admin styles (lazy-linked by page JS) |
+| `templates/partials/menu.html.twig` | Default markup; themes override by copying this partial |
+
+## CSS
+
+Keep admin styles in `assets/css/intention-menu-builder-admin.css`, scoped under `grav-intention-menu-builder--page`. Prefer `imb-admin-*` class names with single hyphens (no BEM `__` / `--`). Do not add inline `<style>` in JS unless the user asks.
+
+## Menus
+
+- Menu ID: `/^[a-z][a-z0-9-]{0,62}$/`. Immutable after create. Used as `menu_render('id')`.
+- Items: `internal` (Grav page route) or `external` (URL). Display name, classes on the `<li>`, optional `new_tab` (default true for external).
+- Nesting is one level only. Children cannot have children.
+- Missing internal pages are omitted from rendered markup.
+- Internal links use the full site URL (scheme + host + path).
+- `menu_render()` options: `wrap_nav` (default true), `nav_id`, `nav_class`, `ul_id`, `ul_class`.
+
+## Admin Next
+
+- Sidebar route: `/plugin/intention-menu-builder`
+- Permissions: `admin.intention-menu-builder.read` / `.write` (page list uses `api.pages.read`)
+- Delete and destructive confirms via `window.__GRAV_DIALOGS` — never native `confirm()`
+- API auth header: `X-API-Token`
+- Reorder with the `⋮⋮` drag handle; Nest / Un-nest for one child level
+
+See [AGENTS.md](../../AGENTS.md).

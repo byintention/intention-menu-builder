@@ -1,0 +1,24 @@
+---
+description: Hard boundary — only edit the intention-menu-builder plugin tree
+alwaysApply: true
+---
+
+# Scope: intention-menu-builder plugin only
+
+- **Only modify files under this repository root** (`user/plugins/intention-menu-builder/`).
+- Do **not** edit `user/config/`, `user/pages/`, themes, other plugins, `system/`, `vendor/`, or parent Grav site `.cursor/`.
+- If plugin enablement or site config is needed, **describe steps for the user**; do not apply them from this workspace.
+
+Examples:
+
+```
+✅ intention-menu-builder.php
+✅ admin-next/pages/intention-menu-builder.js
+✅ blueprints.yaml
+✅ classes/MenuRepository.php
+
+❌ user/config/plugins/intention-menu-builder.yaml
+❌ user/data/intention-menu-builder/header.yaml
+❌ user/themes/intention-base/
+❌ parent Grav .cursor/notes/changelog.md
+```

@@ -1,0 +1,8 @@
+actions:
+  admin.intention-menu-builder:
+    label: Intention Menu Builder
+    actions:
+      read:
+        label: Read Access
+      write:
+        label: Write Access

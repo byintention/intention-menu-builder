@@ -1,0 +1,389 @@
+/* Intention Menu Builder — Admin2 page.
+   Lazy-loaded by admin-next/pages/intention-menu-builder.js. Not used on the public site. */
+
+grav-intention-menu-builder--page {
+    display: block;
+}
+
+grav-intention-menu-builder--page .imb-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 4px 0 24px;
+    min-height: 24rem;
+}
+
+grav-intention-menu-builder--page .imb-admin-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+grav-intention-menu-builder--page .imb-admin-title {
+    margin: 0 0 4px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+grav-intention-menu-builder--page .imb-admin-lede {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted-foreground, #6b7280);
+}
+
+grav-intention-menu-builder--page .imb-admin-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+grav-intention-menu-builder--page .imb-admin-btn {
+    appearance: none;
+    border: 1px solid var(--border, #e5e7eb);
+    background: var(--background, #fff);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    color: var(--foreground, #111);
+}
+
+grav-intention-menu-builder--page .imb-admin-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+grav-intention-menu-builder--page .imb-admin-btn-primary {
+    background: var(--primary, #2563eb);
+    border-color: var(--primary, #2563eb);
+    color: var(--primary-foreground, #fff);
+}
+
+grav-intention-menu-builder--page .imb-admin-btn-danger {
+    color: var(--destructive, #dc2626);
+}
+
+grav-intention-menu-builder--page .imb-admin-error,
+grav-intention-menu-builder--page .imb-admin-status {
+    font-size: 13px;
+    padding: 8px 10px;
+    border-radius: 6px;
+}
+
+grav-intention-menu-builder--page .imb-admin-error {
+    color: var(--destructive, #dc2626);
+    background: color-mix(in srgb, var(--destructive, #dc2626) 8%, transparent);
+}
+
+grav-intention-menu-builder--page .imb-admin-status {
+    color: var(--muted-foreground, #6b7280);
+    background: var(--muted, #f9fafb);
+}
+
+grav-intention-menu-builder--page .imb-admin-layout {
+    display: grid;
+    grid-template-columns: minmax(12rem, 16rem) minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+}
+
+@media (max-width: 720px) {
+    grav-intention-menu-builder--page .imb-admin-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+grav-intention-menu-builder--page .imb-admin-sidebar,
+grav-intention-menu-builder--page .imb-admin-main {
+    border: 1px solid var(--border, #e5e7eb);
+    border-radius: 8px;
+    background: var(--background, #fff);
+    min-width: 0;
+}
+
+grav-intention-menu-builder--page .imb-admin-sidebar {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+grav-intention-menu-builder--page .imb-admin-menu-btn {
+    appearance: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    width: 100%;
+    text-align: left;
+    border: 0;
+    background: transparent;
+    border-radius: 6px;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+}
+
+grav-intention-menu-builder--page .imb-admin-menu-btn:hover,
+grav-intention-menu-builder--page .imb-admin-menu-btn.is-active {
+    background: var(--accent, #f3f4f6);
+}
+
+grav-intention-menu-builder--page .imb-admin-menu-btn.is-active {
+    font-weight: 600;
+}
+
+grav-intention-menu-builder--page .imb-admin-menu-id {
+    font-size: 13px;
+}
+
+grav-intention-menu-builder--page .imb-admin-menu-meta {
+    font-size: 11px;
+    color: var(--muted-foreground, #6b7280);
+    font-weight: 400;
+}
+
+grav-intention-menu-builder--page .imb-admin-empty {
+    font-size: 13px;
+    color: var(--muted-foreground, #6b7280);
+    padding: 12px;
+}
+
+grav-intention-menu-builder--page .imb-admin-main {
+    padding: 14px 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+grav-intention-menu-builder--page .imb-admin-meta {
+    display: grid;
+    grid-template-columns: minmax(8rem, 14rem) minmax(0, 1fr);
+    gap: 10px;
+}
+
+grav-intention-menu-builder--page .imb-admin-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+grav-intention-menu-builder--page .imb-admin-label {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+grav-intention-menu-builder--page .imb-admin-input,
+grav-intention-menu-builder--page .imb-admin-select {
+    appearance: none;
+    width: 100%;
+    border: 1px solid var(--border, #e5e7eb);
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 13px;
+    font-family: inherit;
+    background: var(--background, #fff);
+    color: inherit;
+    box-sizing: border-box;
+}
+
+grav-intention-menu-builder--page .imb-admin-help {
+    font-size: 11px;
+    color: var(--muted-foreground, #6b7280);
+}
+
+grav-intention-menu-builder--page .imb-admin-create {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border: 1px dashed var(--border, #e5e7eb);
+    border-radius: 6px;
+    margin-bottom: 4px;
+}
+
+grav-intention-menu-builder--page .imb-admin-create-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+grav-intention-menu-builder--page .imb-admin-create-row .imb-admin-field {
+    flex: 1 1 8rem;
+}
+
+grav-intention-menu-builder--page .imb-admin-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+grav-intention-menu-builder--page .imb-admin-list-item {
+    border: 1px solid var(--border, #e5e7eb);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--background, #fff);
+}
+
+grav-intention-menu-builder--page .imb-admin-list-item.is-dragging {
+    opacity: 0.55;
+}
+
+grav-intention-menu-builder--page .imb-admin-list-item.is-missing {
+    border-color: color-mix(in srgb, var(--destructive, #dc2626) 40%, var(--border, #e5e7eb));
+}
+
+grav-intention-menu-builder--page .imb-admin-list-item-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background: var(--muted, #f9fafb);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+grav-intention-menu-builder--page .imb-admin-item-toggle {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    padding: 4px 0;
+    font-family: inherit;
+    color: inherit;
+}
+
+grav-intention-menu-builder--page .imb-admin-item-title {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+grav-intention-menu-builder--page .imb-admin-item-summary {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--muted-foreground, #6b7280);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+grav-intention-menu-builder--page .imb-admin-list-drag {
+    cursor: grab;
+    border: 0;
+    background: transparent;
+    color: var(--muted-foreground, #6b7280);
+    padding: 2px 4px;
+    font-size: 14px;
+}
+
+grav-intention-menu-builder--page .imb-admin-badge {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--muted-foreground, #6b7280);
+    border: 1px solid var(--border, #e5e7eb);
+    border-radius: 999px;
+    padding: 1px 7px;
+}
+
+grav-intention-menu-builder--page .imb-admin-warn {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--destructive, #dc2626);
+}
+
+grav-intention-menu-builder--page .imb-admin-icon-btn {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border: 0;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--muted-foreground, #6b7280);
+    padding: 0;
+}
+
+grav-intention-menu-builder--page .imb-admin-icon-btn:hover {
+    background: var(--accent, #f3f4f6);
+}
+
+grav-intention-menu-builder--page .imb-admin-icon-btn-delete:hover {
+    color: var(--destructive, #dc2626);
+}
+
+grav-intention-menu-builder--page .imb-admin-list-item-body {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+grav-intention-menu-builder--page .imb-admin-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+@media (max-width: 640px) {
+    grav-intention-menu-builder--page .imb-admin-meta,
+    grav-intention-menu-builder--page .imb-admin-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+grav-intention-menu-builder--page .imb-admin-type {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+grav-intention-menu-builder--page .imb-admin-type .imb-admin-btn.is-active {
+    background: var(--primary, #2563eb);
+    border-color: var(--primary, #2563eb);
+    color: var(--primary-foreground, #fff);
+}
+
+grav-intention-menu-builder--page .imb-admin-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 4px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+grav-intention-menu-builder--page .imb-admin-children {
+    margin: 0 0 0 1.25rem;
+    padding: 0 0 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+grav-intention-menu-builder--page .imb-admin-list-foot {
+    display: flex;
+    justify-content: flex-end;
+}
+
+grav-intention-menu-builder--page .imb-admin-code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+}

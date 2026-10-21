@@ -1,0 +1,4 @@
+PLUGIN_INTENTION_MENU_BUILDER:
+  SIDEBAR: Menus
+  TITLE: Menus
+  DESCRIPTION: Create named menus for templates. Use menu_render('id') or menu_items('id') in Twig.
