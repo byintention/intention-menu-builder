@@ -50,6 +50,10 @@ Menu IDs cannot be renamed after create. Runtime data path (not in this repo): `
 
 See [`.cursor/rules/conventions.mdc`](.cursor/rules/conventions.mdc). Class prefix: `imb-admin-*`. No native `confirm()` in Admin Next — use `__GRAV_DIALOGS`.
 
+## Plans
+
+Write plans in [`.cursor/plans/`](.cursor/plans/). If Cursor saves a plan under the home directory, move it here before the planning turn ends.
+
 ## Changelog
 
 After completing a task, prepend two lines to [`.cursor/notes/changelog.md`](.cursor/notes/changelog.md) (date + ≤30-word summary). Do **not** write to the parent Grav site changelog.
